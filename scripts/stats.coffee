@@ -2,9 +2,9 @@
 #   Allows hubot to run commands from slack
 
 NODE_TLS_REJECT_UNAUTHORIZED = 0;
-userAgent: process.env.USER_AGENT
-baseUrl: process.env.BASE_URL
-accessToken: process.env.ACCESS_TOKEN
+userAgent=process.env.USER_AGENT
+baseUrl=process.env.BASE_URL
+accessToken=process.env.ACCESS_TOKEN
 
 module.exports  = (robot) ->
 
