@@ -13,3 +13,5 @@ module.exports = (robot) ->
 		msg.send " - *animaeStats*: le statistiche delle anime"
 		msg.send " - *ultimi n iscritti* con n compreso da 1-50"
 		msg.send " - *ultime n anime* con n compreso da 1-50"
+		msg.send " - *memo per categoria* statistiche sui memo"
+		msg.send " - *memo per tipo* statistiche sui memo"

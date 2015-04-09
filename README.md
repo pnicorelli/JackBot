@@ -8,5 +8,5 @@ Jack, the letLife hubot
 - edit vars for authentication
 - `npm install`
 - `./launch`
-- He Joined the chat!
+- Jack has joined the chat!
 
