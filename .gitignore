@@ -4,6 +4,7 @@ launch
 # Logs
 logs
 *.log
+nohup.out
 
 # Runtime data
 pids
