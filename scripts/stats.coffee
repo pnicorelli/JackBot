@@ -8,6 +8,27 @@ accessToken=process.env.ACCESS_TOKEN
 
 module.exports  = (robot) ->
 
+    robot.respond /hai le (mobilestats|mobilestat) del (.*)/i, (msg) ->
+        sets = msg.match[2]
+        url = "#{baseUrl}v1/admin/stats/mobileOS?setsLF=#{sets}"
+        console.log "#{url}"
+        msg.http("#{url}", {rejectUnauthorized: false})
+        .header("user-agent", "#{userAgent}")
+        .header("Content-Type", "application/json")
+        .header("Authorization", "#{accessToken}")
+        .get() (err, res, body) ->
+            if err
+                msg.send "wops :( #{err}"
+                return
+                
+            try
+                    json = JSON.parse(body)
+                    msg.send "In questo momento conto #{json.total} device nel #{sets} \n"
+                    for item in json["mobileOS"]
+                        msg.send " - #{item.count} sono #{item._id}"
+            catch error
+                    msg.send "uhm.... mi sono incasinato: #{error}"
+
     robot.hear /usersStats|userstats|userstat/i, (msg) ->
         url = "#{baseUrl}v1/admin/stats/users"
         console.log "#{url}"
