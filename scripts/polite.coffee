@@ -15,3 +15,6 @@ module.exports = (robot) ->
 		msg.send " - *ultime n anime* con n compreso da 1-50"
 		msg.send " - *memo per categoria* statistiche sui memo"
 		msg.send " - *memo per tipo* statistiche sui memo"
+		msg.send " "
+		msg.send "Mi chiedi (chiamandomi), ti dico:\n"
+		msg.send " - hai le *mobilestats* del *set*: statistiche su mobileOS"
